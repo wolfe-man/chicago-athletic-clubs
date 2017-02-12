@@ -34,7 +34,8 @@
 
 
 (defn get-cac-classes [class]
-  (let [yoga-regex (partial re-find #"(?i)yoga")]
+  (let [yoga-regex (partial re-find #"(?i)yoga")
+        spin-regex (partial re-find #"(?i)spin")]
     (cond
       (yoga-regex class)
       #{"Aerial Yoga 60 Min" "Ashtanga Power Yoga 75 Min"
@@ -56,7 +57,10 @@
         "Yoga Multi-Level 75 Min" "Yoga Multi-Level 90 Min"
         "Yoga Multi-Level 60 Min" "Yoga Elements 60 Min"
         "Yoga Elements 90 Min" "Yoga Sculpt 60 Min"
-        "Functional Balance 45 Min" "Yoga 90 Min"})))
+        "Functional Balance 45 Min" "Yoga 90 Min"}
+      (spin-regex class)
+      #{"Live DJ Spin 50 Min" "Quick Spin" "Spin 50 Min" "Spin 75 Min"
+        "BURN" "SPRINT" "SPRINT 30 min"})))
 
 
 (defn get-cac-schedule [location-id start-date]
