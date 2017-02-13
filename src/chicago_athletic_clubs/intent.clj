@@ -28,7 +28,8 @@
 
 
 (defn get-location-id [location]
-  (let [wicker-regex (partial re-find #"(?i)wicker")]
+  8799
+  #_(let [wicker-regex (partial re-find #"(?i)wicker")]
     (cond
       (wicker-regex location) 8799
       :else 8799)))
