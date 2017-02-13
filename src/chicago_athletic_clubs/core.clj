@@ -37,6 +37,10 @@
                  (= "AMAZON.HelpIntent" (get-in event-object [:intent :name])))
             (help-request)
 
+            #_(and (= "IntentRequest" file-type)
+                   (= "SetDefaultLocation" (get-in event-object [:intent :name])))
+            ;;(set-default-location)
+
             (= "IntentRequest" file-type)
             (intent-request event-object))]
       (-> resp
