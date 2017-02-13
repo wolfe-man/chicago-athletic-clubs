@@ -30,7 +30,8 @@
 (defn get-location-id [location]
   (let [wicker-regex (partial re-find #"(?i)wicker")]
     (cond
-      (wicker-regex location) 8799)))
+      (wicker-regex location) 8799
+      :else 8799)))
 
 
 (defn get-cac-classes [class]
