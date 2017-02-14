@@ -30,14 +30,15 @@
 (defn get-location-id [location]
   8799
   #_(let [wicker-regex (partial re-find #"(?i)wicker")]
-    (cond
-      (wicker-regex location) 8799
-      :else 8799)))
+      (cond
+        (wicker-regex location) 8799
+        :else 8799)))
 
 
 (defn get-cac-classes [class]
   (let [yoga-regex (partial re-find #"(?i)yoga")
-        spin-regex (partial re-find #"(?i)spin")]
+        spin-regex (partial re-find #"(?i)spin")
+        boxing-regex (partial re-find #"(?i)boxing")]
     (cond
       (yoga-regex class)
       #{"Aerial Yoga 60 Min" "Ashtanga Power Yoga 75 Min"
@@ -62,7 +63,12 @@
         "Functional Balance 45 Min" "Yoga 90 Min"}
       (spin-regex class)
       #{"Live DJ Spin 50 Min" "Quick Spin" "Spin 50 Min" "Spin 75 Min"
-        "BURN" "SPRINT" "SPRINT 30 min"})))
+        "BURN" "SPRINT" "SPRINT 30 min"}
+      (boxing-regex class)
+      #{"Boxing FORCE 60 Min" "Body Combat 60 Min" "Body Combat Express 45 Min"
+        "Boxing Challenge 60 Min" "Boxing Challenge 45 Min" "Fight Club 60 Min"
+        "Kickboxing Skills and Drills 60 Min" "Kick Boxing 60 Min"
+        "Max Force Kickboxing 60 Min" "Turbo Kick 60 Min"})))
 
 
 (defn get-cac-schedule [location-id start-date]
