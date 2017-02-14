@@ -38,7 +38,7 @@
 (defn get-cac-classes [class]
   (let [yoga-regex (partial re-find #"(?i)yoga")
         spin-regex (partial re-find #"(?i)spin")
-        boxing-regex (partial re-find #"(?i)boxing")]
+        boxing-regex (partial re-find #"(?i)box")]
     (cond
       (yoga-regex class)
       #{"Aerial Yoga 60 Min" "Ashtanga Power Yoga 75 Min"
